@@ -1,0 +1,96 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments (common names)
+venv/
+env/
+ENV/
+myenv/
+.env
+
+# =========================
+# PyTorch / Machine Learning
+# =========================
+# Model checkpoints and weights
+*.pth
+*.pt
+*.onnx
+checkpoints/
+
+# Training logs and outputs
+runs/               # TensorBoard logs (PyTorch Lightning, etc.)
+logs/
+results/
+output/
+
+# NOTE: Avoid ignoring entire 'models/' or 'data/' by default,
+# as you might want to commit small model definitions or configs.
+# If you do store large binaries there, ignore specific subdirs instead.
+
+# =========================
+# Conda
+# =========================
+# Ignore local conda environments (if stored in project dir)
+envs/
+
+# Do NOT ignore environment.yml or conda-lock.yml — keep them in version control!
+
+# =========================
+# IDE: PyCharm / IntelliJ IDEA
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# =========================
+# Jupyter Notebook
+# =========================
+.ipynb_checkpoints/
+*.ipynb
+
+# =========================
+# Editors and OS
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+
+# VS Code (optional — uncomment if you don't share settings)
+# .vscode/
+
+# =========================
+# Data Files (Optional — UNCOMMENT if you NEVER commit data)
+# =========================
+# WARNING: Only enable if your data is external or too large for Git.
+#
+# data/
+# dataset/
+# *.csv
+# *.npy
+# *.npz
+# *.h5
+# *.parquet
