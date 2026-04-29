@@ -26,7 +26,7 @@ f3 = open("templet.txt",encoding="utf-8")
 str = ""
 for line in f3.readlines():
     str += line
-content = json.loads(str)
+content = json.loads(str) 
 
 f3.close()
 print("模板文件加载完成")
