@@ -94,3 +94,16 @@ desktop.ini
 # *.npz
 # *.h5
 # *.parquet
+
+# 忽略模型文件
+*.model
+*.npy
+*.bin
+*.vec
+
+# 忽略分词结果
+fenci_result*.txt
+
+# 忽略临时文件
+__pycache__/
+*.pyc
