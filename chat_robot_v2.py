@@ -24,7 +24,7 @@ FASTTEXT_MODEL_PATH = "fasttext.model"
 
 # ===================== 工具函数 =====================
 def cut_words(text, stop_words):
-    """分词 + 停用词过滤（核心优化）"""
+    """分词 + 停用词过滤"""
     words = jieba.lcut(text.strip())
     # 过滤：停用词、空字符、单字
     words = [w for w in words if w not in stop_words and w.strip() and len(w) > 1]
@@ -55,11 +55,11 @@ def train_fasttext():
     sentences = Text8Corpus(SEG_RESULT_PATH)
     model = FastText(
         sentences=sentences,
-        vector_size=100,
-        window=3,
-        min_count=1,
-        workers=4,
-        epochs=10
+        vector_size=100, # 词向量的维度大小。这个参数决定了每个词将被表示为一个多长的向量。
+        window=3, #上下文窗口的大小。它定义了模型在预测一个词时，会考虑其前后多少个词
+        min_count=1, #词频阈值。模型会忽略在语料库中出现次数低于这个值的词
+        workers=4, #用于训练模型的线程数
+        epochs=10 #  训练的迭代轮数
     )
     model.save(FASTTEXT_MODEL_PATH)
     print("✅ FastText 模型训练完成")
@@ -85,7 +85,7 @@ def load_template():
     return content
 
 
-# ===================== 核心回答函数（仅 FastText） =====================
+# ===================== 核心回答函数 =====================
 def get_best_answer(user_input, content, model):
     """使用 FastText 计算语义相似度，返回最优回答"""
     # 用户输入分词 + 过滤

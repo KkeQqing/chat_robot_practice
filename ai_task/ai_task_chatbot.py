@@ -5,7 +5,7 @@ import numpy as np
 from gensim.models import FastText
 
 # ===================== 全局配置 =====================
-# 停用词表（可自行扩展）
+# 停用词表
 STOP_WORDS = {
     "的", "了", "是", "我", "你", "吗", "呢", "啊", "就", "都", "还", "在", "有",
     "和", "与", "吧", "对", "这", "那", "个", "里", "去", "来", "哦", "呀", "呢",
@@ -15,7 +15,7 @@ STOP_WORDS = {
 # 相似度阈值（低于这个值 → 不匹配）
 SIMILARITY_THRESHOLD = 0.45
 
-# 文件路径配置（全部对应你的 corpus2 + templet2）
+# 文件路径配置
 CORPUS_PATH = "corpus2.txt"
 SEG_RESULT_PATH = "fenci_result2.txt"
 TEMPLATE_PATH = "templet2.txt"
@@ -85,7 +85,7 @@ def load_template():
     return content
 
 
-# ===================== 核心回答函数（仅 FastText） =====================
+# ===================== 核心回答函数 =====================
 def get_best_answer(user_input, content, model):
     """使用 FastText 计算语义相似度，返回最优回答"""
     # 用户输入分词 + 过滤
