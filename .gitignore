@@ -107,3 +107,14 @@ fenci_result*.txt
 # 忽略临时文件
 __pycache__/
 *.pyc
+
+# auto-added ignore rules
+.vscode/
+.vs/
+*.suo
+*.user
+*.log
+*.tmp
+.pytest_cache/
+.mypy_cache/
+.venv/
